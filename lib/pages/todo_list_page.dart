@@ -12,7 +12,7 @@ class TodoListPage extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                labelText: 'Adicione uma tarefa',
+                labelText: 'Adicione uma',
                 hintText: "estudar",
               ),
             ),
