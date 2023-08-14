@@ -11,6 +11,7 @@ class TodoRepository {
     sharedPreferences = await SharedPreferences.getInstance();
     final String jsonString = sharedPreferences.getString(todoListKey) ?? '[]';
 
+    // ignore: unnecessary_null_comparison
     if (jsonString == null) {
       return [];
     }
