@@ -48,16 +48,17 @@ class _TodoListPageState extends State<TodoListPage> {
                         style: TextStyle(fontSize: 20.0),
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: "Adicionr uma tarefa",
+                          labelText: "Adicione uma tarefa",
                           hintText: "Ex.Estudar",
                           errorText: errotext,
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Colors.blue,
+                              color: Colors.black,
                             )
                         ),
                         labelStyle: TextStyle(
-                          color: Colors.black,
+                          color: Colors.black
+                          ,
                         )
                         )
                       ),
@@ -86,7 +87,7 @@ class _TodoListPageState extends State<TodoListPage> {
                         todoRepository.saveTodoList(todos);
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.blue,
+                          backgroundColor: Colors.blueGrey,
                           padding: EdgeInsets.all(14)),
                       child: Icon(
                         Icons.add,
@@ -113,14 +114,14 @@ class _TodoListPageState extends State<TodoListPage> {
                   children: [
                     Expanded(
                       child:
-                          Text("Você possui ${todos.length} tarefas pedentes"),
+                          Text("Você possui ${todos.length} tarefas pendentes"),
                     ),
                     SizedBox(width: 8),
                     ElevatedButton(
                       onPressed: ShowDeleteTodosConfirmationDialog,
-                      child: Text("limpar tudo"),
+                      child: Text("Limpar tudo"),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blue,
+                        backgroundColor: Colors.blueGrey,
                         padding: EdgeInsets.all(14),
                       ),
                     ),
@@ -166,22 +167,22 @@ class _TodoListPageState extends State<TodoListPage> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('Você deseja limpar Tudo?'),
-        content: Text('Essa ação irar deletar todas as suas tarefas'),
+        title: Text('VOCÊ DESEJA LIMPAR TUDO?'),
+        content: Text('Essa ação removerá permanentemente todas as tarefas'),
         actions: [
           TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              style: TextButton.styleFrom(foregroundColor: Colors.blue),
-              child: Text('Cancelar')),
+              style: TextButton.styleFrom(foregroundColor: Colors.blueGrey),
+              child: Text('CANCELAR')),
           TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
                 deleteAllTodos();
               },
               style: TextButton.styleFrom(foregroundColor: Colors.red),
-              child: Text('Limpar tudo'))
+              child: Text('LIMPAR TUDO'))
         ],
       ),
     );
